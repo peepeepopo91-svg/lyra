@@ -1,9 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "corepack pnpm install --frozen-lockfile --prod=false && corepack pnpm run build"
   publish = "dist/client"
 
 [build.environment]
   NODE_VERSION = "22"
+  PNPM_FLAGS = "--prod=false"
 
 # SPA fallback — all paths that don't match a static file are served
 # the client-side index.html so TanStack Router can handle them.
